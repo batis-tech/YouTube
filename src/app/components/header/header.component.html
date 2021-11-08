@@ -1,0 +1,32 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="columns ">
+    <div class="column ">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div class="navbar-brand">
+        	<mat-icon class="mt-3 ml-3">menu</mat-icon>
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="assets/logo.png" width="112" height="50">
+        </a>
+      </div>
+    </div>
+    <div class="column">
+      <input class="input mt-3" type="text" placeholder="Search">
+    </div>
+    <div class="column ">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <mat-slide-toggle class="mr-5 mt-3 toggle" (click)="switchTheme()">{{ theme === "light-theme" ? "Switch to dark" : "Switch to light" }}</mat-slide-toggle>
+            <mat-icon class="mr-5 mt-3">videocam</mat-icon>
+            <mat-icon class="mr-5 mt-3">apps</mat-icon>
+            <mat-icon class="mr-5 mt-3">notifications_none</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

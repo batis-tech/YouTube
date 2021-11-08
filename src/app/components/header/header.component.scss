@@ -1,0 +1,10 @@
+.navbar{
+  display: block;
+  &-item{
+    img{
+      max-height:2rem;
+      max-width:4rem;
+    }
+
+  }
+}

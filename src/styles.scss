@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+.dark-theme{
+  --body-background-color:#212121;
+  --text-background-color:white;
+  --button-color:#212121;
+  --box-color:#212121;
+}
+.light-theme{
+  --body-background-color:white;
+  --text-background-color:black;
+  --button-color:white;
+  --box-color:white;
+}
+
+html, body { height: 100%; }
+body { margin: 0;
+   font-family: Roboto,
+    "Helvetica Neue",
+     sans-serif; background-color: var(--body-background-color)}
