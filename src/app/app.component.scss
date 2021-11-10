@@ -1,9 +1,5 @@
-.columns{
 
-    flex-wrap: wrap;
-    .is-four-fifths{
-      flex-grow: 1;
- flex-shrink: 1;
- flex-basis: 30ch;
-    }
+.column{
+  width: 85%;
+  float:right;
 }

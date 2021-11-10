@@ -1,100 +1,29 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="columns ">
-    <div class="column ">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-      <div class="navbar-brand mt-1">
-        <mat-icon class="mt-4 ml-3" (click)="onToolbar()">menu</mat-icon>
-        <a class="navbar-item" href="https://bulma.io">
-          <div *ngIf="theme === 'light-theme'" class="mt-1">
-            <img src="assets/logo.svg" style="min-width:9rem;margin-left:-12%">
-          </div>
-          <div *ngIf="theme === 'dark-theme'" class="mt-1">
-            <img src="assets/logo-dark-mode.svg" style="min-width:9rem;margin-left:-12%">
-          </div>
-        </a>
+<div class="columns is-desktop is-multiline is-mobile">
+  <div class="column">
+    <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media" >
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-6">@johnsmith</p>
       </div>
     </div>
-    <div class="column">
-      <input class="input mt-3" type="text" placeholder="Search">
-    </div>
-    <div class="column ">
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <mat-slide-toggle class="mr-5 mt-3 toggle" (click)="switchTheme()">
-              <div *ngIf="theme === 'light-theme'" class="mt-1">
-                <mat-icon>brightness_3</mat-icon>
-              </div>
-              <div *ngIf="theme === 'dark-theme'" class="mt-1">
-                <mat-icon>wb_sunny</mat-icon>
-              </div>
-            </mat-slide-toggle>
-            <mat-icon class="mr-5 mt-3">videocam</mat-icon>
-            <mat-icon class="mr-5 mt-3">apps</mat-icon>
-            <mat-icon class="mr-5 mt-3">notifications_none</mat-icon>
-          </div>
-        </div>
-      </div>
+
+    <div class="content" style="padding-top:-5px">
+      Lorem ipsum dolor sit amet,
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
-</nav>
-<aside class="menu">
-  <div [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen">
-    <ul class="menu-list mt-5 ">
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-        <p class="mt-1 ml-4">Home</p>
-      </li>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">explore</mat-icon>
-        <p class="mt-1 ml-4">Explore</p>
-      </li>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">subscriptions</mat-icon>
-        <p class="mt-1 ml-4">Subscriptions</p>
-      </li>
-      <hr>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">video_library</mat-icon>
-        <p class="mt-1 ml-4">Library</p>
-      </li>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">history</mat-icon>
-        <p class="mt-1 ml-4">History</p>
-      </li>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">personal_video</mat-icon>
-        <p class="mt-1 ml-4">Your Videos</p>
-      </li>
-      <li>
-        <mat-icon aria-hidden="false" aria-label="Example home icon">watch_later</mat-icon>
-        <p class="mt-1 ml-4">Watch later</p>
-      </li>
-      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <li>
-              <p class="mt-1 ml-4">Show more</p>
-            </li>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <div class="list">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon>
-          <p class="mt-1 ml-4">Liked videos</p>
-        </div>
-        <div class="list">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">playlist_add</mat-icon>
-          <p class="mt-1 ml-4">Playlists</p>
-        </div>
-      </mat-expansion-panel>
-      <hr>
-      <li>
-        <p class="mt-1 ml-1s">Subscriptions</p>
-      </li>
-    </ul>
-  </div>
-</aside>
+</div></div>
+
+
+</div>

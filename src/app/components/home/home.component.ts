@@ -1,34 +1,23 @@
-import { Component, OnInit ,Inject,  Renderer2} from '@angular/core';
-
-import { DOCUMENT } from '@angular/common'
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  theme: Theme = 'dark-theme';
-  isMenuOpen = true;
-  panelOpenState = false;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2) {}
+  constructor(private dataService:DataService,private httpClient:HttpClient) { }
 
-  ngOnInit(){
-    this.initializeTheme();
-
+  ngOnInit(): void {
   }
-  switchTheme(){
-    this.document.body.classList.replace(this.theme, this.theme ==='light-theme'? (this.theme = 'dark-theme') : (this.theme = 'light-theme'))
+
+  getVidoes(){
+    this.dataService.youtubeVideos().subscribe(data =>{
+      console.log(data);
+
+    })
   }
-  initializeTheme = (): void =>
-   this.renderer.addClass(this.document.body, this.theme);
 
-   onToolbar(){
-    console.log("is been clicked",this.isMenuOpen);
-    this.isMenuOpen = !this.isMenuOpen
-
-   }
 }
- export type Theme = 'light-theme' | 'dark-theme';
