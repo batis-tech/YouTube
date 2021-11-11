@@ -2,9 +2,9 @@
 
 .column{
   margin-top:10px;
-  width: 15rem;
+  width: 14rem;
   .card{
-    height:20rem;
+    height:16rem;
     width: 15rem;
     background:var(--body-background-color);
     color:var(--title);
@@ -12,18 +12,31 @@
       height: 50%;
     }
     &-content{
-      padding-top: 2.5rem;
+      padding-top: 0rem;
+      padding: 0.5rem !important;
       .media{
-        padding-bottom: -10px !important;
+        margin: 1.3rem 0rem !important;
       }
     }
     .title.is-6{
       color: var(--title);
-      margin-top: 14%;
+      margin-top: 0%;
       font-size: 12px;
     }
     .content{
-      margin-top: -14px
+      margin-top: -19px
     }
+    .image.is-48x48{
+      height: 21px;
+      width: 28px;
+      img{
+        border-radius: 50px;
+      }
+    }
+  }
+  .content-video{
+    padding-top:-5px !important;
+    color:#aaa;
+    font-size: 11px;
   }
 }

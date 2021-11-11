@@ -12,11 +12,16 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+// import { TimeAgoPipe } from './pipes/time-ago.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    // TimeAgoPipe,
+
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSlideToggleModule,
     MatSidenavModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

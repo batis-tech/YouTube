@@ -8,16 +8,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
+  list:any[]=[];
+  videolists:any[]=[];
+
+
   constructor(private dataService:DataService,private httpClient:HttpClient) { }
 
   ngOnInit(): void {
-  }
-
-  getVidoes(){
     this.dataService.youtubeVideos().subscribe(data =>{
-      console.log(data);
 
+        this.videolists = data.items;
+
+        console.log(this.videolists);
     })
+
   }
 
 }
