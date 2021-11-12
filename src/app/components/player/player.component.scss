@@ -1,0 +1,12 @@
+.menu {
+  &-open {
+    width: 200px !important;
+    transition: 0.2s;
+  }
+
+  &-close {
+    width: 0px !important;
+    transition: 0.2s;
+  }
+
+}

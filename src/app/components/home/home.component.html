@@ -1,5 +1,6 @@
 <div class="columns is-desktop is-multiline is-mobile">
   <div *ngFor="let video of videolists">
+    <a (click)="videoDetail(video.id)">
     <div class="column">
       <div class="card">
         <div class="card-image">
@@ -21,10 +22,11 @@
 
           <div class="content content-video">
             {{ video.snippet.channelTitle }}<br>
-            <time datetime="2016-1-1">{{ video.snippet.publishedAt  }}</time>
+            <time datetime="2016-1-1">{{ video.snippet.publishedAt |  timeago  }}</time>
           </div>
         </div>
       </div>
     </div>
+    </a>
   </div>
 </div>

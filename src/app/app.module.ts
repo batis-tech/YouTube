@@ -12,15 +12,15 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { TimeagoModule } from 'ngx-timeago';
+// import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    // TimeAgoPipe,
-
+    // PlayerComponent,
 
   ],
   imports: [
@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatExpansionModule,
     HttpClientModule,
+     TimeagoModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
