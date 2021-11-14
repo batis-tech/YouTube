@@ -1,12 +1,18 @@
-.menu {
-  &-open {
-    width: 200px !important;
-    transition: 0.2s;
-  }
+@import "../../../styles.scss";
 
-  &-close {
-    width: 0px !important;
-    transition: 0.2s;
+.video-player {
+  margin-top: 5rem !important;
+  iframe{
+    width: 100%
   }
-
+}
+.column-title{
+  padding-bottom: 0rem;
+.subtitle{
+  color: var(--title);
+  font-weight:400;
+}
+}
+.video-desc{
+  padding-top: 0rem
 }

@@ -1,5 +1,7 @@
 @import "../../../styles.scss";
-
+.columns{
+  width: 118%;
+  margin-left: 18px;
 .column{
   margin-top:10px;
   width: 14rem;
@@ -39,4 +41,5 @@
     color:#aaa;
     font-size: 11px;
   }
+}
 }

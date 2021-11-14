@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common'
 })
 export class HeaderComponent implements OnInit {
   theme: Theme = 'dark-theme';
-  isMenuOpen = true;
+  isMenuOpen = false;
   panelOpenState = false;
 
   constructor(

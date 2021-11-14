@@ -1,3 +1,23 @@
-<iframe id="ytplayer" type="text/html" width="640" height="360"
-src="https://www.youtube.com/embed/{this.video}}"
-frameborder="0"></iframe>
+<div class="columns">
+  <div class="column is-three-quarters mt-5">
+    <youtube-player videoId="{{this.video}}" [width]="width" [height]="450" class="video-player ml-5 mt-6"></youtube-player>
+    <div *ngFor="let d of videoDetail">
+      <div class="column  ml-5 is-full column-title">
+        <h1 class="subtitle is-4">{{d.snippet.title}}</h1>
+      </div>
+     <div class="columns">
+      <div class="column  ml-5 is-half video-desc">
+        <h1 class="subtitle is-6">{{d.snippet.publishedAt |  timeago }}</h1>
+      </div>
+      <div class="column  ml-5 is-half video-desc">
+        <h1 class="subtitle is-6"></h1>
+      </div>
+     </div>
+     <hr>
+     <div class="ml-5 is-full">
+         <!-- <h1 class="subtitle is-4">{{ d.snippet.localized.description }}</h1> -->
+     </div>
+    </div>
+  </div>
+  <div class="column">Auto</div>
+</div>

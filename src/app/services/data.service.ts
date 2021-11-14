@@ -13,8 +13,9 @@ export class DataService {
   headers : new HttpHeaders({
   'Accept' : 'application/json',
   'Content-Type' : 'application/json'
-  })
+})
 }
+
 
 
   constructor(private router :Router, private http :HttpClient) { }
@@ -25,7 +26,12 @@ export class DataService {
      return this.http.get<any>(yVideos, this.httpYoutubeVideos)
   }
 
-  
+  videoDetails(id: string){
+    let videoDetails = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&maxResults=40&key=${this.api}`;
+     return this.http.get<any>(videoDetails, this.httpYoutubeVideos)
+  }
+
+
 
 
 

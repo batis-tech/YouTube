@@ -13,14 +13,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TimeagoModule } from 'ngx-timeago';
-// import { PlayerComponent } from './components/player/player.component';
+import { PlayerComponent } from './components/player/player.component';
+import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    // PlayerComponent,
+    PlayerComponent,
+
+
 
   ],
   imports: [
@@ -33,7 +36,8 @@ import { TimeagoModule } from 'ngx-timeago';
     MatSidenavModule,
     MatExpansionModule,
     HttpClientModule,
-     TimeagoModule.forRoot()
+     TimeagoModule.forRoot(),
+     NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
