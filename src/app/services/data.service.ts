@@ -31,8 +31,9 @@ export class DataService {
      return this.http.get<any>(videoDetails, this.httpYoutubeVideos)
   }
 
-
-
-
+  videoComments(id: string){
+    let videoComments = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=10000&order=relevance&videoId=${id}&key=${this.api}`;
+     return this.http.get<any>(videoComments, this.httpYoutubeVideos)
+  }
 
 }

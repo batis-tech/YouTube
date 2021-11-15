@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute, Params } from '@angular/router';
@@ -14,6 +14,9 @@ export class PlayerComponent implements OnInit {
   isMenuOpen = false;
   width=850;
   videoDetail:any;
+  @Input() videoComments:any[]=[];
+  commentId:any;
+
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private httpClient :HttpClient) { }
   ngOnInit(): void {
@@ -21,14 +24,19 @@ export class PlayerComponent implements OnInit {
       this.video = params['id'];
       console.log(this.video);
       this.getRates(this.video)
+      this.getComments(this.video)
     })
   }
 
 getRates(id: string){
   this.dataService.videoDetails(id).subscribe(data =>{
     this.videoDetail = data.items;
-    console.log(this.videoDetail);
-    console.log(data);
+  })
+}
+getComments(id: string){
+  this.dataService.videoComments(id).subscribe(data =>{
+    this.videoComments = data.items;
+    console.log('comments',this.videoComments);
 
   })
 }

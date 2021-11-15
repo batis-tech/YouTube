@@ -1,0 +1,25 @@
+@import "../../../../styles.scss";
+.media{
+  img{
+    border-radius: 50px;
+    height: 54px;
+    width: 58px;
+  }
+  .content{
+    p{
+      color:var(--text-color);
+      strong{
+        color:var(--text-color);
+      }
+    }
+    .mat-icon {
+      color: var(--icon-color);
+      font-size: 17px;
+      margin-right: -6px;
+      small{
+      color: var(--icon-color);
+      }
+
+    }
+  }
+}

@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TimeagoModule } from 'ngx-timeago';
 import { PlayerComponent } from './components/player/player.component';
 import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
+import { CommentsComponent } from './components/player/comments/comments.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ReplayComponent } from './components/player/comments/replay/replay.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
     HeaderComponent,
     HomeComponent,
     PlayerComponent,
+    CommentsComponent,
+    ReplayComponent,
 
 
 
@@ -36,8 +41,10 @@ import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
     MatSidenavModule,
     MatExpansionModule,
     HttpClientModule,
-     TimeagoModule.forRoot(),
-     NgxYoutubePlayerModule.forRoot()
+    TimeagoModule.forRoot(),
+    NgxYoutubePlayerModule.forRoot(),
+    InfiniteScrollModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+<div class="search-results" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="10" (scrolled)="onScroll()" [scrollWindow]="false">
+ <div *ngFor="let comment of comments">
+   <article class="media">
+  <figure class="media-left">
+    <a href="{{comment.snippet.topLevelComment.snippet.authorChannelUrl}}"><p class="image is-64x64">
+      <img src="{{comment.snippet.topLevelComment.snippet.authorProfileImageUrl}}">
+    </p></a>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{comment.snippet.topLevelComment.snippet.authorDisplayName}}</strong> <small> {{comment.snippet.topLevelComment.snippet.publishedAt |  timeago}}</small>
+        <br>
+      {{comment.snippet.topLevelComment.snippet.textDisplay}}
+      </p>
+      <small class="mr-2"><mat-icon>thumb_up</mat-icon>{{comment.snippet.topLevelComment.snippet.likeCount}}</small><mat-icon>thumb_down</mat-icon>
+       <app-replay [replies]></app-replay>
+    </div>
+  </div>
+</article>
+ </div>
+</div>
