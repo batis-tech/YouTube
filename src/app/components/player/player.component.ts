@@ -16,6 +16,10 @@ export class PlayerComponent implements OnInit {
   videoDetail:any;
   @Input() videoComments:any[]=[];
   commentId:any;
+  channelID:any;
+  @Input() channel:any;
+  @Input() channelStatistics:any;
+  panelOpenState = false;
 
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private httpClient :HttpClient) { }
@@ -24,6 +28,7 @@ export class PlayerComponent implements OnInit {
       this.video = params['id'];
       console.log(this.video);
       this.getRates(this.video)
+      this.getVideoStatistics(this.video)
       this.getComments(this.video)
     })
   }
@@ -31,13 +36,35 @@ export class PlayerComponent implements OnInit {
 getRates(id: string){
   this.dataService.videoDetails(id).subscribe(data =>{
     this.videoDetail = data.items;
+    console.log('video details',this.videoDetail);
+    this.channelID = data.items[0].snippet.channelId;
+    console.log('channnel id',this.channelID);
+    this.getChannelDetail(this.channelID)
+    this.getChannelStatistics(this.channelID)
+  })
+}
+getVideoStatistics(id: string){
+  this.dataService.videoStatistics(id).subscribe(data =>{
+    console.log('video Statistics',data);
+
   })
 }
 getComments(id: string){
   this.dataService.videoComments(id).subscribe(data =>{
     this.videoComments = data.items;
     console.log('comments',this.videoComments);
-
   })
 }
+ getChannelDetail(id:string){
+   this.dataService.ChannelDetail(id).subscribe(data =>{
+     this.channel = data.items
+     console.log('channels data',this.channel);
+   })
+ }
+ getChannelStatistics(id:string){
+   this.dataService.Channelstatistics(id).subscribe(data =>{
+     this.channelStatistics = data.items[0].statistics;
+     console.log('channels statistics',this.channelStatistics);
+   })
+ }
 }

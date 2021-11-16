@@ -1,0 +1,20 @@
+@import "../../../../styles.scss";
+.media{
+  .media-left{
+    img{
+      border-radius: 50px;
+    }
+  }
+  .media-content{
+    margin-top: 2%;
+    p{
+      strong{
+        color: var(--text-color) ;
+      }
+      small{
+        color:var(--text-color);
+       font-weight: bolder;
+      }
+    }
+  }
+}

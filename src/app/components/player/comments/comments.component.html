@@ -13,8 +13,8 @@
         <br>
       {{comment.snippet.topLevelComment.snippet.textDisplay}}
       </p>
-      <small class="mr-2"><mat-icon>thumb_up</mat-icon>{{comment.snippet.topLevelComment.snippet.likeCount}}</small><mat-icon>thumb_down</mat-icon>
-       <app-replay [replies]></app-replay>
+      <small class="mr-2"><mat-icon>thumb_up</mat-icon>{{comment.snippet.topLevelComment.snippet.likeCount | shortNumber}}</small><mat-icon>thumb_down</mat-icon>
+       <app-replay [replies]=""></app-replay>
     </div>
   </div>
 </article>

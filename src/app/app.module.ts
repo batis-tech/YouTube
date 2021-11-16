@@ -18,6 +18,8 @@ import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
 import { CommentsComponent } from './components/player/comments/comments.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ReplayComponent } from './components/player/comments/replay/replay.component';
+import { ChannelComponent } from './components/player/channel/channel.component';
+import { ShortNumberPipe } from './pipes/short-number.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ReplayComponent } from './components/player/comments/replay/replay.comp
     PlayerComponent,
     CommentsComponent,
     ReplayComponent,
+    ChannelComponent,
+    ShortNumberPipe,
 
 
 

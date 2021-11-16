@@ -2,17 +2,43 @@
 
 .video-player {
   margin-top: 5rem !important;
-  iframe{
-    width: 100%
+
+  iframe {
+    width: 100%;
   }
 }
-.column-title{
-  padding-bottom: 0rem;
-.subtitle{
+
+.column-title {
+  padding-bottom: 0;
+
+  .subtitle {
+    color: var(--title);
+    font-weight: 400;
+  }
+}
+
+.video-desc {
+  padding-top: 0;
+}
+
+hr {
+  background-color: var(--border-color);
+  border: none;
+  display: block;
+  height: 0.2px;
+  margin: 0.5rem 0 0.5rem 4%;
+  width: 100%;
+}
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+  background: var(--body-background-color);
   color: var(--title);
-  font-weight:400;
-}
-}
-.video-desc{
-  padding-top: 0rem
+
+  &:hover {
+    background: var(--body-background-color);
+  }
+  .mat-expansion-panel-header-title {
+    color: var(--border-color);
+  }
 }

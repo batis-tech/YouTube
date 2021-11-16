@@ -30,10 +30,22 @@ export class DataService {
     let videoDetails = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&maxResults=40&key=${this.api}`;
      return this.http.get<any>(videoDetails, this.httpYoutubeVideos)
   }
+  videoStatistics(id: string){
+    let videoStatistics = `https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id=${id}&maxResults=40&key=${this.api}`;
+     return this.http.get<any>(videoStatistics, this.httpYoutubeVideos)
+  }
 
   videoComments(id: string){
     let videoComments = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=10000&order=relevance&videoId=${id}&key=${this.api}`;
      return this.http.get<any>(videoComments, this.httpYoutubeVideos)
+  }
+  ChannelDetail(id:string){
+    let channelDetail = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${this.api}`;
+    return this.http.get<any>(channelDetail, this.httpYoutubeVideos)
+  }
+  Channelstatistics(id:string){
+    let channelStatistics = `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=${id}&key=${this.api}`;
+    return this.http.get<any>(channelStatistics, this.httpYoutubeVideos)
   }
 
 }
