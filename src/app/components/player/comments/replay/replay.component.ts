@@ -11,8 +11,7 @@ export class ReplayComponent implements OnInit {
   @Input() replies:any;
 
   ngOnInit(): void {
-    console.log('comment id',this.replies);
-
+  console.log('repley',this.replies);
   }
 
 }

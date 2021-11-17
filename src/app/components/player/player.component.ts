@@ -20,6 +20,7 @@ export class PlayerComponent implements OnInit {
   @Input() channel:any;
   @Input() channelStatistics:any;
   panelOpenState = false;
+  videoStatistics:any;
 
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private httpClient :HttpClient) { }
@@ -45,7 +46,8 @@ getRates(id: string){
 }
 getVideoStatistics(id: string){
   this.dataService.videoStatistics(id).subscribe(data =>{
-    console.log('video Statistics',data);
+    this.videoStatistics = data.items[0].statistics;
+    console.log('video Statistics',this.videoStatistics);
 
   })
 }
