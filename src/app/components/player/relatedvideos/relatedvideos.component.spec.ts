@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReplayComponent } from './replay.component';
+import { RelatedvideosComponent } from './relatedvideos.component';
 
-describe('ReplayComponent', () => {
-  let component: ReplayComponent;
-  let fixture: ComponentFixture<ReplayComponent>;
+describe('RelatedvideosComponent', () => {
+  let component: RelatedvideosComponent;
+  let fixture: ComponentFixture<RelatedvideosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReplayComponent ]
+      declarations: [ RelatedvideosComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReplayComponent);
+    fixture = TestBed.createComponent(RelatedvideosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

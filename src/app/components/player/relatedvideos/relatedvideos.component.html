@@ -1,0 +1,20 @@
+<div *ngFor="let video of videos" >
+  <a (click)="videoDetail(video.id)">
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="{{video.snippet.thumbnails.high.url}}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content ml-4">
+          <p class="subtitle is-5">{{video.snippet.title| slice:0:56 }}</p>
+          <p class="subtitle is-6">{{video.snippet.channelTitle}} </p>
+          <p class="subtitle is-6">{{video.snippet.publishedAt |  timeago }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </a>
+</div>

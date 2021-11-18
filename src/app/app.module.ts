@@ -17,9 +17,11 @@ import { PlayerComponent } from './components/player/player.component';
 import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
 import { CommentsComponent } from './components/player/comments/comments.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { ReplayComponent } from './components/player/comments/replay/replay.component';
+
 import { ChannelComponent } from './components/player/channel/channel.component';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
+import { ReplyComponent } from './components/player/reply/reply.component';
+import { RelatedvideosComponent } from './components/player/relatedvideos/relatedvideos.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { ShortNumberPipe } from './pipes/short-number.pipe';
     HomeComponent,
     PlayerComponent,
     CommentsComponent,
-    ReplayComponent,
     ChannelComponent,
     ShortNumberPipe,
+    ReplyComponent,
+    RelatedvideosComponent,
 
 
 

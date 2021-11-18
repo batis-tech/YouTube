@@ -6,13 +6,12 @@ import { TimeagoIntl } from 'ngx-timeago';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-@Input() comments:any[]=[];
-commentId:any[]=[]
+@Input() comments:any;
+
 
 
   constructor() { }
   ngOnInit(): void {
-
 
   }
   onScroll() {

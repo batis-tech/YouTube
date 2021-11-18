@@ -47,5 +47,13 @@ export class DataService {
     let channelStatistics = `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=${id}&key=${this.api}`;
     return this.http.get<any>(channelStatistics, this.httpYoutubeVideos)
   }
+  relatedvideos(id:string){
+    let relatedvideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=100&videoCategoryId=${id}&key=${this.api}`;
+    return this.http.get<any>(relatedvideos, this.httpYoutubeVideos)
+  }
+  relatedvideosStatistics(id:string){
+    let relatedvideosStatistics = `https://youtube.googleapis.com/youtube/v3/videos?part=statistics&chart=mostPopular&maxResults=100&videoCategoryId=${id}&key=${this.api}`;
+    return this.http.get<any>(relatedvideosStatistics, this.httpYoutubeVideos)
+  }
 
 }

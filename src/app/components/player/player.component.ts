@@ -21,27 +21,44 @@ export class PlayerComponent implements OnInit {
   @Input() channelStatistics:any;
   panelOpenState = false;
   videoStatistics:any;
+  categoryID:any;
+  @Input() relateds:any[]=[];
+  @Input() relatedsStatistics:any;
+
 
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private httpClient :HttpClient) { }
+
+
+
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.video = params['id'];
+
       console.log(this.video);
       this.getRates(this.video)
       this.getVideoStatistics(this.video)
-      this.getComments(this.video)
+      this.getComments(this.video);
+
+
     })
   }
+
+
+
 
 getRates(id: string){
   this.dataService.videoDetails(id).subscribe(data =>{
     this.videoDetail = data.items;
     console.log('video details',this.videoDetail);
     this.channelID = data.items[0].snippet.channelId;
+    this.categoryID = data.items[0].snippet.categoryId;
     console.log('channnel id',this.channelID);
-    this.getChannelDetail(this.channelID)
-    this.getChannelStatistics(this.channelID)
+    console.log('category id',this.categoryID);
+    this.getChannelDetail(this.channelID);
+    this.getChannelStatistics(this.channelID);
+    this.getRelatedVideos(this.categoryID);
+    this.getRelatedVideosStatistics(this.categoryID);
   })
 }
 getVideoStatistics(id: string){
@@ -55,6 +72,7 @@ getComments(id: string){
   this.dataService.videoComments(id).subscribe(data =>{
     this.videoComments = data.items;
     console.log('comments',this.videoComments);
+
   })
 }
  getChannelDetail(id:string){
@@ -69,4 +87,17 @@ getComments(id: string){
      console.log('channels statistics',this.channelStatistics);
    })
  }
+ getRelatedVideos(id:string){
+   this.dataService.relatedvideos(id).subscribe(data =>{
+     this.relateds = data.items
+     console.log('relatedvideos',data.statistics);
+   })
+ }
+ getRelatedVideosStatistics(id:string){
+   this.dataService.relatedvideosStatistics(id).subscribe(data =>{
+     this.relatedsStatistics = data.items;
+     console.log('relatedvideos Statistics',this.relatedsStatistics );
+   })
+ }
+
 }
