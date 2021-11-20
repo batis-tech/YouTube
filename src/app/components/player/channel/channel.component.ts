@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-channel',
   templateUrl: './channel.component.html',
@@ -8,12 +8,16 @@ import { Component, OnInit,Input } from '@angular/core';
 export class ChannelComponent implements OnInit {
   @Input() channel:any;
   @Input() statistics:any;
-  
-  constructor() { }
+
+  constructor(private router:Router ) { }
 
   ngOnInit(): void {
 
 
+  }
+
+  channelProfile(id: string){
+    this.router.navigate(['profile',id])
   }
 
 }

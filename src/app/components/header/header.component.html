@@ -1,6 +1,6 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="columns ">
-    <div class="column ">
+    <div class="column">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -18,9 +18,20 @@
         </a>
       </div>
     </div>
-    <div class="column">
-      <input class="input mt-3" type="text" placeholder="Search">
+    <form [formGroup]="searchForm" (ngSubmit)="search()" style="width: 38%;">
+    <div class="column mt-4">
+      <div class="field has-addons">
+        <div class="control" style="width: 100%;">
+          <input class="input" formControlName="search" type="text" placeholder="Search">
+        </div>
+        <div class="control">
+          <button class="button is-info"  type="submit">
+          <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
+    </form>
     <div class="column ">
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">

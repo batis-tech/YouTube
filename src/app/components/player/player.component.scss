@@ -27,6 +27,11 @@
   .icons {
     display: flex;
     width: 100%;
+   button{
+     background: transparent;
+     border: none;
+     cursor: pointer;
+    }
 
     .icon {
       width: 100%;
@@ -36,6 +41,7 @@
         font-size: 25px;
         width: 26px;
         margin-top: 28%;
+          color: var(--subtitie);
       }
 
       h1 {

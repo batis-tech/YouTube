@@ -25,7 +25,9 @@
     color: var(--icon-color) !important;
   }
 }
-
+.button.is-info{
+ background-color:var(--border-color);
+}
 .menu {
 margin-top: 4%;
   position: inherit;

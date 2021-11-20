@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 export class RelatedvideosComponent implements OnInit {
   @Input() videos:any;
   @Input() videosStatistics:any;
+  redite:any;
   constructor( private router:Router) { }
 
   ngOnInit(): void {
@@ -16,7 +17,10 @@ export class RelatedvideosComponent implements OnInit {
 
   }
   videoDetail(id: string){
-    this.router.navigate(['watch', id]);
+  this.router.navigate(['watch', id])
+  .then(() => {
+   window.location.reload();
+ });
   }
 
 }

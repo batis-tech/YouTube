@@ -17,11 +17,16 @@ import { PlayerComponent } from './components/player/player.component';
 import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
 import { CommentsComponent } from './components/player/comments/comments.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ChannelComponent } from './components/player/channel/channel.component';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { ReplyComponent } from './components/player/reply/reply.component';
 import { RelatedvideosComponent } from './components/player/relatedvideos/relatedvideos.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ChannelhomeComponent } from './components/profile/channelhome/channelhome.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,9 @@ import { RelatedvideosComponent } from './components/player/relatedvideos/relate
     ShortNumberPipe,
     ReplyComponent,
     RelatedvideosComponent,
-
+    SearchComponent,
+    ProfileComponent,
+    ChannelhomeComponent,
 
 
   ],
@@ -51,7 +58,9 @@ import { RelatedvideosComponent } from './components/player/relatedvideos/relate
     TimeagoModule.forRoot(),
     NgxYoutubePlayerModule.forRoot(),
     InfiniteScrollModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

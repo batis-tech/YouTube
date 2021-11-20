@@ -1,0 +1,36 @@
+<section class="hero banner" style="background-image:url('{{channelProfileDetails.snippet.thumbnails.high.url}}')">
+  <div class="hero-body">
+    <img src="" alt="">
+  </div>
+</section>
+<section class="hero channelbackground">
+  <div class="hero-body">
+    <div class="card-content">
+    <div class="media-left">
+    <figure class="image is-48x48">
+        <img src="{{channelProfileDetails.snippet.thumbnails.high.url}}" alt="Placeholder image">
+      </figure>
+      </div>
+   <div class="media-content">
+     <p class="title">
+       {{channelProfileDetails.snippet.title}}
+     </p>
+     <p class="subtitle">
+       {{channelProfileDetailsStatistics.subscriberCount | shortNumber}}
+     </p>
+   </div>
+   </div>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li class="is-active" (click)="home(this.profile)"><a>HOME</a></li>
+      <li><a>VIDEOS</a></li>
+      <li><a>PLAYLISTS</a></li>
+      <li><a>COMMUNITY</a></li>
+      <li><a>CHANNELS</a></li>
+      <li><a>ABOUT</a></li>
+    </ul>
+  </div>
+</section>
+
+<router-outlet class="mt-6"></router-outlet>

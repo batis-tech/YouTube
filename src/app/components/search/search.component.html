@@ -1,0 +1,24 @@
+<div class="container is-max-widescreen ml-4 mt-6">
+  <div *ngFor="let video of resultList ">
+    <a (click)="videoPlayer(video.id.videoId)">
+    <div class="card ml-4">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ video.snippet.thumbnails.high.url }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content mt-1">
+            <p class="title is-4">{{ video.snippet.title }}</p>
+            <p class="subtitle is-7">{{ video.snippet.publishTime | timeago }}</p>
+            <p class="subtitle is-6">{{ video.snippet.channelTitle }}</p>
+            <br>
+            <p class="subtitle is-7">{{ video.snippet.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
+  </div>
+</div>

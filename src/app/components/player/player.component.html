@@ -5,67 +5,86 @@
       <div class="column  ml-5 is-full column-title">
         <h1 class="subtitle is-5">{{d.snippet.title}}</h1>
       </div>
-     <div class="columns">
-      <div class="column  ml-5 is-half video-desc">
-        <h1 class="subtitle is-6">{{ videoStatistics.viewCount | number}} Views </h1>
-        <h1 class="subtitle is-6 ml-4">{{d.snippet.publishedAt |  timeago }}</h1>
-      </div>
-      <div class="column  ml-5 is-half video-desc">
+      <div class="columns">
+        <div class="column  ml-5 is-half video-desc">
+          <h1 class="subtitle is-6">{{ videoStatistics.viewCount | number}} Views </h1>
+          <h1 class="subtitle is-6 ml-4">{{d.snippet.publishedAt |  timeago }}</h1>
+        </div>
+        <div class="column  ml-5 is-half video-desc">
           <div class="icons">
-            <div class="icon">
-              <div style="display:flex" *ngIf=" videoStatistics.dislikeCount  < 1 ">
-                  <mat-icon>thumb_up</mat-icon><h1 class="subtitle is-5">Likse</h1>
+            <form [formGroup]="likeForm" (ngSubmit)="onLike()" style="width: 38%;">
+              <div class="icon" style="width: 8rem;margin-bottom:2rem">
+
+                <input type="hidden" formControlName="like" value="like">
+                <div style="display:flex;" *ngIf=" videoStatistics.dislikeCount  < 1 ">
+                  <button type="submit" class="likes-button">
+                    <mat-icon>thumb_up</mat-icon>
+                  </button>
+                  <h1 class="subtitle is-5">Likes</h1>
+                </div>
+                <div style="display:flex" *ngIf=" videoStatistics.dislikeCount  > 0 ">
+                  <button type="submit">
+                    <mat-icon>thumb_up</mat-icon>
+                  </button>
+                  <h1 class="subtitle is-5">{{ videoStatistics.likeCount | shortNumber}} </h1>
+                </div>
               </div>
-              <div style="display:flex" *ngIf=" videoStatistics.dislikeCount  > 0 ">
-                <mat-icon>thumb_up</mat-icon><h1 class="subtitle is-5">{{ videoStatistics.likeCount | shortNumber}} </h1>
+            </form>
+            <form [formGroup]="dislikeForm" (ngSubmit)="onDislike()" style="width: 38%;">
+              <div style="width: 8rem;margin-bottom:2rem" class="icon">
+                <div *ngIf=" videoStatistics.dislikeCount  < 1 ">
+                  <button type="submit" class="likes-button">
+                    <mat-icon>thumb_down</mat-icon>
+                    <h1 class="subtitle is-5">Dislike</h1>
+                  </button>
+                </div>
+                <div style="display:flex" *ngIf=" videoStatistics.dislikeCount  > 0 ">
+                  <button type="submit" class="likes-button">
+                    <mat-icon>thumb_down</mat-icon>
+                  </button>
+                  <h1 class="subtitle is-5">{{ videoStatistics.dislikeCount | shortNumber}} </h1>
+                </div>
               </div>
-            </div>
-            <div  style="display:flex"class="icon">
-              <div *ngIf=" videoStatistics.dislikeCount  < 1 ">
-                  <mat-icon>thumb_down</mat-icon><h1 class="subtitle is-5">Dislike</h1>
-              </div>
-             <div style="display:flex" *ngIf=" videoStatistics.dislikeCount  > 0 ">
-               <mat-icon>thumb_down</mat-icon><h1 class="subtitle is-5">{{ videoStatistics.dislikeCount | shortNumber}} </h1>
-             </div>
-          </div>
-          <div class="icon" style="display:flex; margin-top: 0%;">
+            </form>
+            <div class="icon" style="display:flex; margin-top: 0%;">
               <mat-icon>share</mat-icon>
+            </div>
+            <div class="icon" style="display:flex; margin-top: 0%;">
+              <mat-icon>save_alt</mat-icon>
+            </div>
           </div>
-          <div class="icon" style="display:flex; margin-top: 0%;">
-            <mat-icon>save_alt</mat-icon>
-          </div>
-          </div>
+        </div>
+
       </div>
+      <hr>
+      <div class="ml-5 is-full">
+        <app-channel [channel]="channel" [statistics]="channelStatistics"></app-channel>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Show more
+              </mat-panel-title>
+              <mat-panel-description>
 
-     </div>
-     <hr>
-     <div class="ml-5 is-full">
-       <app-channel [channel]="channel" [statistics]="channelStatistics"></app-channel>
-       <br>
-       <mat-accordion>
-         <mat-expansion-panel (opened)="panelOpenState = true"
-                              (closed)="panelOpenState = false">
-           <mat-expansion-panel-header>
-             <mat-panel-title>
-             Show more
-             </mat-panel-title>
-             <mat-panel-description>
-
-             </mat-panel-description>
-           </mat-expansion-panel-header>
-           <p>{{d.snippet.description}}</p>
-         </mat-expansion-panel>
-       </mat-accordion>
-       <br>
-     </div>
-     <hr>
-     <br>
-     <div class="ml-5 is-full">
-         <h1 class="subtitle is-5 ml-5">{{ videoStatistics.commentCount | number}} Comments </h1>
-         <!-- <h1 class="subtitle is-4">{{ d.snippet.localized.description }}</h1> -->
-         <app-comments [comments]='videoComments'></app-comments>
-     </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{d.snippet.description}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+      </div>
+      <hr>
+      <br>
+      <div class="ml-5 is-full">
+        <h1 class="subtitle is-5 ml-5">{{ videoStatistics.commentCount | number}} Comments </h1>
+        <!-- <h1 class="subtitle is-4">{{ d.snippet.localized.description }}</h1> -->
+        <app-comments [comments]='videoComments'></app-comments>
+      </div>
     </div>
   </div>
-  <div class="column is-two-fifths mt-6"><app-relatedvideos [videos]="relateds" ></app-relatedvideos></div>
+  <div class="column is-two-fifths mt-6">
+    <app-relatedvideos [videos]="relateds"></app-relatedvideos>
+  </div>
 </div>
